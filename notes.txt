@@ -1,0 +1,37 @@
+16 bit bus = indexed right to left
+A[0] is right most / least significant bit
+A[15] is left most / most significant bit
+
+Not(0) = 1;
+Not(1) = 0;
+
+And(a=0, b=0, out=0);
+And(a=1, b=0, out=0);
+And(a=0, b=1, out=0);
+And(a=1, b=1, out=1);
+
+Or(a=0, b=0, out=0);
+Or(a=1, b=0, out=1);
+Or(a=0, b=1, out=1);
+Or(a=1, b=1, out=1);
+
+Xor(a=0, b=0, out=0);
+Xor(a=1, b=0, out=1);
+Xor(a=0, b=1, out=1);
+Xor(a=1, b=1, out=0);
+
+Nand(a=0, b=0, out=1);
+Nand(a=1, b=0, out=1);
+Nand(a=0, b=1, out=1);
+Nand(a=1, b=1, out=0);
+------------------------------------------------------------
+------------------------------------------------------------
+* Not(a) = Not(a And a) = (a Nand a);
+* (a And b) = NOT(a Nand b);
+* (a Or b) = Not(Not(a) And Not(b)); -- MORGAN FORMULA
+** NAND =(a Nand b) = Not(a And b);
+------------------------------------------------------------
+- 1 byte = 8 bits = 0000 0000 = 256 (half pos/neg) possible numbers [0..255]
+- 0000 1101 bit to decimal => 8 + 4 + 1
+- 87 decimal to bit = 64 + 16 + 4 + 2 + 1 = 0101 0111
+- 99 decimal to bit = 64 + 32 + 2 + 1 = 0110 0011
